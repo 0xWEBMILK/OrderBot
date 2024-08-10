@@ -9,7 +9,7 @@ from core.fsm.DeleteOrder import DeleteOrder
 router = Router()
 
 @router.callback_query(StateFilter(None), F.data == "delete_order")
-async def delete_order(callback: CallbackQuery, state: FSMContext):
+async def delete_order_handler(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer(text='Введите номер заказа')
     await state.set_state(DeleteOrder.enter_target_id)
 
