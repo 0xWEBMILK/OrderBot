@@ -6,7 +6,7 @@ from aiogram.fsm.context import FSMContext
 router = Router()
 
 @router.callback_query(StateFilter(None), F.data == "cancel")
-async def cancel(callback: CallbackQuery, state: FSMContext):
+async def cancel_handler(callback: CallbackQuery, state: FSMContext):
     await callback.answer(text='Отменено!')
     await callback.message.delete()
 
