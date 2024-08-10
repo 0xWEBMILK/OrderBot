@@ -1,6 +1,9 @@
 import json
 
-async def delete_order(file_path: str = None, file_name: str = None, ids: str = None) -> None:
+async def delete_order(file_path: str = None,
+                       file_name: str = None,
+                       ids: str = None) -> None:
+    
     ids_list = [int(i.strip()) - 1 for i in ids.replace(',', ' ').split()]
 
     with open(f'{file_path}/{file_name}') as file:
