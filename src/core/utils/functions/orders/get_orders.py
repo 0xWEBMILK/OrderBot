@@ -3,7 +3,9 @@ import json
 from core.utils.functions.total.fetch_temp import fetch_temp
 from core.utils.functions.total.fetch_total import fetch_total
 
-async def get_orders(file_path: str = None, file_name: str = None) -> str:
+async def get_orders(file_path: str = None,
+                     file_name: str = None) -> str:
+    
     with open(f'{file_path}/{file_name}') as file:
         data = json.load(file)
         
