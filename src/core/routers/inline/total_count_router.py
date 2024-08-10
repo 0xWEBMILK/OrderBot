@@ -8,7 +8,7 @@ from core.fsm import TotalCount
 router = Router()
 
 @router.callback_query(StateFilter(None), F.data == "change_total")
-async def change_total(callback: CallbackQuery, state: FSMContext):
+async def change_total_handler(callback: CallbackQuery, state: FSMContext):
     await callback.message.edit_text(text='Введите допустимое кол-во!')
     
     await state.set_state(TotalCount.enter_total_count)
