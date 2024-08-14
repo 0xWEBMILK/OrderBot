@@ -21,4 +21,4 @@ async def enter_id(message: Message, state: FSMContext):
         await message.answer('Заказы обновлены!')
         await state.clear()
     except ValueError:
-        await message.reply('Произошёл сбой!')
+        await message.reply('Что-то пошло не так!')
