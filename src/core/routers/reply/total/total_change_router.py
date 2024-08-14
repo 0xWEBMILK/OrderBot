@@ -21,4 +21,4 @@ async def total_change(message: Message, state: FSMContext):
         await message.answer('Кол-во обновлено!')
         await state.clear()
     except ValueError:
-        await message.reply('Кол-во должно быть в виде числа!')
+        await message.reply('Кол-во должно быть числом!')
